@@ -27,7 +27,7 @@ using std::string;
 char* strtok_s(char* s, const char* sep, char** context)
 {
 #if defined(_WIN32) || defined(_WIN64)
-	return ::strtok_s(s, sep, context);
+	return ink::compiler::internal::strtok_s(s, sep, context);
 #else
 	if (context == nullptr || sep == nullptr || (s == nullptr && *context == nullptr)) {
 		errno = EINVAL;
